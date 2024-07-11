@@ -1,0 +1,64 @@
+{
+    "iceCreamFlavors": {
+        "7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b": {
+            "flavor": "Vanilla Bean",
+            "price": 5.99,
+            "calories": 210,
+            "rating": 4.8
+        },
+        "9b8a7c6d-5e4f-3a2b-1c0d-df2b3e4f5a6b": {
+            "flavor": "Chocolate Fudge",
+            "price": 6.49,
+            "calories": 250,
+            "rating": 4.7
+        },
+        "2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d": {
+            "flavor": "Strawberry Bliss",
+            "price": 6.19,
+            "calories": 190,
+            "rating": 4.5
+        },
+        "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d": {
+            "flavor": "Mint Chocolate Chip",
+            "price": 5.79,
+            "calories": 230,
+            "rating": 4.6
+        },
+        "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d": {
+            "flavor": "Salted Caramel",
+            "price": 6.99,
+            "calories": 240,
+            "rating": 4.9
+        },
+        "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d": {
+            "flavor": "Pistachio Delight",
+            "price": 6.59,
+            "calories": 220,
+            "rating": 4.7
+        },
+        "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d": {
+            "flavor": "Mango Tango",
+            "price": 5.89,
+            "calories": 200,
+            "rating": 4.5
+        },
+        "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d": {
+            "flavor": "Coconut Bliss",
+            "price": 6.29,
+            "calories": 210,
+            "rating": 4.8
+        },
+        "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d": {
+            "flavor": "Peach Sorbet",
+            "price": 5.49,
+            "calories": 180,
+            "rating": 4.4
+        },
+        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d": {
+            "flavor": "Raspberry Ripple",
+            "price": 6.09,
+            "calories": 195,
+            "rating": 4.6
+        }
+    }
+}
