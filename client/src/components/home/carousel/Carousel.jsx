@@ -1,4 +1,5 @@
 import { Slide } from "react-awesome-reveal"
+import { Link } from "react-router-dom"
 export default function Carousel(){
 
     return(
@@ -17,9 +18,8 @@ export default function Carousel(){
              Life is better with Ice Cream
             </h1>
             </Slide>
-            <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">
-              Learn More
-            </a>
+            <Link to="/about" className="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</Link>
+           
           </div>
         </div>
       </div>
