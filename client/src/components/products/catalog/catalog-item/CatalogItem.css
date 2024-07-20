@@ -74,3 +74,7 @@
 .nav.nav-tabs .nav-link.active {
     border-bottom: 2px solid var(--bs-secondary) !important;
 }
+
+.text-dark.fs-5.fw-bold.mb-0{
+ padding-bottom: 15px;
+}
