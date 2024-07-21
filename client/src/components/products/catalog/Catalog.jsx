@@ -3,26 +3,22 @@ import * as productService from "../../../services/productService";
 import SideCatalog from "../side-catalog/SideCatalog";
 import CatalogItem from "./catalog-item/CatalogItem";
 import Loader from "../../loader/Loader";
+import { useLoading } from "../../../hooks/useLoading";
 import "./Catalog.css";
 
 export default function Catalog() {
   const [flavors, setFlavors] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
+  const [loading, executeWithLoading] = useLoading(true);
+
   useEffect(() => {
-    setLoading(true);
-    productService.getAll()
-      .then(result => {
-        setFlavors(result);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-        setLoading(false);
-      });
-  }, []);
+    executeWithLoading(async () => {
+      const result = await productService.getAll();
+      setFlavors(result);
+    });
+  }, [executeWithLoading]);
 
   const pageChangeHandler = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -34,7 +30,7 @@ export default function Catalog() {
   const totalPages = Math.ceil(flavors.length / itemsPerPage);
 
   if (loading) {
-    return <p>{<Loader />}</p>;
+    return <Loader />;
   }
 
   return (

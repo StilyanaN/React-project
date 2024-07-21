@@ -13,7 +13,9 @@ export default function Loader() {
           <div className="mouth"></div>
         </div>
         <div className="shadow"></div>
+        <h3>Loading...</h3>
       </div>
+      
     </div>
   );
 }
