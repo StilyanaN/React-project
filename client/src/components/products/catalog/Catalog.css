@@ -49,7 +49,7 @@
     display: inline-block;
 }
   
-.pagination a {
+.pagination button {
     color: var(--bs-dark);
     padding: 10px 16px;
     text-decoration: none;
@@ -58,13 +58,13 @@
     margin: 0 4px;
 }
   
-.pagination a.active {
+.pagination button.active {
     background-color: var(--bs-primary);
     color: var(--bs-light);
     border: 1px solid var(--bs-secondary);
 }
   
-.pagination a:hover:not(.active) {background-color: var(--bs-primary)}
+.pagination button:hover:not(.active) {background-color: var(--bs-primary)}
 
 .nav.nav-tabs .nav-link.active {
     border-bottom: 2px solid var(--bs-secondary) !important;

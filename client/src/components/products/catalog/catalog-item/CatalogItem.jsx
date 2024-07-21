@@ -31,7 +31,7 @@ export default function CatalogItem({
           
           <div className="d-flex justify-content-between flex-lg-wrap">
             <p className="text-dark fs-5 fw-bold mb-0">
-              ${price} / kg
+              ${price} / 100g
             </p>
             <a
               href="#"
