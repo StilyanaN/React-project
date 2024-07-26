@@ -1339,7 +1339,97 @@
     	}
     };
     var seedData = {
-    	recipes: {
+        flavors:{
+            
+        "7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b": {
+            name: "Vanilla Bean",
+            price: 2.39,
+            calories: 250,
+            rating: 4.8,
+            imageUrl: "https://img.freepik.com/premium-photo/vanilla-ice-cream-vanilla-beans-vanilla-flowers-table_641010-39733.jpg",
+            _id:"7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b"
+        
+        },
+        "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d": {
+            name: "Salted Caramel",
+            price: 2.99,
+            calories: 300,
+            rating: 4.9,
+            imageUrl: "https://img.freepik.com/premium-photo/salted-caramel-ice-cream-cookie-tasty-dessert-background_962764-88293.jpg",
+            _id:"5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d"
+           
+        },
+        "2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d": {
+            name: "Strawberry Bliss",
+            price: 2.49,
+            calories: 220,
+            rating: 4.7,
+            imageUrl: "https://img.freepik.com/premium-photo/bowl-strawberry-ice-cream-with-fresh-berries-pink-background_756535-2163.jpg",
+            _id:"2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d"
+           
+        },
+        "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d": {
+            name: "Mint Chocolate Chip",
+            price: 2.29,
+            calories: 270,
+            rating: 4.6,
+            imageUrl: "https://img.freepik.com/premium-photo/product-photography-mint-chocolate-chip-ice-cream-bowl_613258-552.jpg",
+            _id:"4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9"
+           
+        },
+        "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d": {
+            name: "Pistachio Delight",
+            price: 2.99,
+            calories: 310,
+            rating: 4.9,
+            imageUrl: "https://img.freepik.com/free-photo/pistachio-ice-cream_658428-300.jpg",
+            _id:"6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d"
+            
+        },
+        "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d": {
+            name:"Mango Tango",
+            price: 2.99,
+            calories: 240,
+            rating: 4.8,
+            imageUrl: "https://img.freepik.com/free-photo/composition-delicious-homemade-icecream_23-2148900953.jpg",
+            _id:"3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d"
+        
+        },
+        "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d": {
+            name: "Coconut Bliss",
+            price: 2.49,
+            calories: 290,
+            rating: 4.7,
+            imageUrl: "https://img.freepik.com/premium-photo/coconut-ice-cream-coconut-shell_871881-1191.jpg",
+            _id:"8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d"
+           
+        },
+        "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d": {
+            name: "Peach Sorbet",
+            price: 2.79,
+            calories: 180,
+            rating: 4.6,
+            imageUrl: "https://img.freepik.com/premium-photo/refreshing-peach-sorbet-creation_893571-35624.jpg",
+            _id:"0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d"
+           
+        },
+        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d": {
+            name: "Raspberry Ripple",
+            price: 2.49,
+            calories: 260,
+            rating: 4.8,
+            imageUrl:"https://img.freepik.com/premium-photo/raspberry-ice-cream-with-fresh-raspberries-bowl_140916-2749.jpg",
+            _id:"1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+            
+        }
+    
+
+        },
+        
+        cart: {
+            
+        },
+        recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
     			name: "Easy Lasagna",
@@ -1393,13 +1483,7 @@
     		}
     	},
     	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
+           
     	},
     	records: {
     		i01: {
