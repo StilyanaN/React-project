@@ -12,3 +12,16 @@ export const getOne = async (flavorId) => {
   return result;
 };
 
+export const create = async (flavorData) => {
+  const result = await request.post(baseUrl, flavorData);
+
+  return result;
+};
+
+export const edit = async (flavorId, flavorData) => {
+  const result = await request.put(`${baseUrl}/${flavorId}`, flavorData);
+
+  return result;
+};
+
+export const remove = async (flavorId) => request.remove(`${baseUrl}/${flavorId}`);
