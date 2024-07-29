@@ -33,13 +33,10 @@ export default function CatalogItem({
             <p className="text-dark fs-5 fw-bold mb-0">
               ${price} / 100g
             </p>
-            <a
-              href="#"
-              className="btn border border-secondary rounded-pill px-3 text-primary"
-            >
-              <i className="fa fa-shopping-bag me-2 text-primary" />
-              Add to cart
-            </a>
+            <Link to={`/catalog/${_id}`} className="btn border border-secondary rounded-pill px-3 text-primary">
+              <i className="far fa-eye me-2 text-primary" />
+              See details
+              </Link>
           </div>
         </div>
       </div>
