@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "payload-react": "^1.2.4",
     "react-awesome-reveal": "^4.2.12",
+    "react-hook-form": "^7.52.1",
     "react-router-dom": "^6.24.1",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "yup": "^1.4.0"
   }
 }
