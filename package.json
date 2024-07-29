@@ -2,6 +2,7 @@
   "dependencies": {
     "payload-react": "^1.2.4",
     "react-awesome-reveal": "^4.2.12",
-    "react-router-dom": "^6.24.1"
+    "react-router-dom": "^6.24.1",
+    "react-toastify": "^10.0.5"
   }
 }

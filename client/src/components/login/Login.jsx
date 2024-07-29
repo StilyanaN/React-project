@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Slide } from "react-awesome-reveal";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,9 +14,19 @@ import "./Login.css";
 
 export default function Login() {
   const { loginSubmitHandler } = useContext(AuthContext);
+
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),
   });
+
+  const onSubmit = async (data) => {
+    try {
+      await loginSubmitHandler(data);
+      toast.success('Login successful!');
+    } catch (error) {
+      toast.error('Login failed. Please check your credentials and try again.');
+    }
+  };
   return (
     <>
     <Slide direction="right" delay="10" duration="2000" triggerOnce="true">
@@ -49,7 +61,7 @@ export default function Login() {
           <div className="form-content">
             <div className="login-form">
               <div className="title">Login</div>
-              <form id="login" onSubmit={handleSubmit(loginSubmitHandler)}>
+              <form id="login" onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-boxes">
                   <div className="input-box">
                     <i className="fas fa-envelope" />
