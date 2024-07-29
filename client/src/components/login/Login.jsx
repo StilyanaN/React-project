@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import AuthContext from "../../contexts/authContext";
 import { loginSchema } from "../../utils/validationSchemas"
 
@@ -16,7 +17,7 @@ export default function Login() {
   const { loginSubmitHandler } = useContext(AuthContext);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: yupResolver(loginSchema),
   });
 
   const onSubmit = async (data) => {
