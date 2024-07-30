@@ -1091,6 +1091,7 @@ pre code {
   .col-md-6 {
     flex: 0 0 50%;
     max-width: 50%;
+    margin-bottom: 15px;
   }
   .col-md-7 {
     flex: 0 0 58.33333%;
@@ -9763,9 +9764,9 @@ h6,
   z-index: 11;
 }
 /* Icons */
-.icon{
+/* .icon{
   margin-left: 50px;
-}
+} */
  .fa-2x{
   font-size:1em;
 }
@@ -9965,6 +9966,7 @@ h6,
   font-size: 30px;
   outline: none;
 }
+
 
 .service-item .service-img {
   position: relative;
