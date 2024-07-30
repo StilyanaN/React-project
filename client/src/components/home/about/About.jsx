@@ -2,6 +2,9 @@ import { Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 export default function About() {
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+};
   return (
     <Slide direction="right" duration="3500" triggerOnce='true'>
       <div className="container-fluid py-5">
@@ -22,7 +25,7 @@ export default function About() {
               <p>
                 Founded in 1950, our family-owned ice cream parlor has been serving up smiles and delicious ice cream made from the finest ingredients. Each flavor is a testament to our commitment to quality, bringing together classic and innovative recipes that delight both young and old.
               </p>
-              <Link to="/catalog" className="btn btn-secondary mt-2">
+              <Link to="/catalog" className="btn btn-secondary mt-2" onClick={handleScrollToTop}> 
                 Go to Shop
               </Link>
             </div>

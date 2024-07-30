@@ -24,7 +24,7 @@ export default function DropdownProfile() {
               <div className="ds-dropdown-content">
                 <ul>
                   <li>
-                    <Link to="/sales/order/history/" className="ds-link ds-text ds-text-variant__paragraph ds-link__dark ds-text-size__l">
+                    <Link to="/profile" className="ds-link ds-text ds-text-variant__paragraph ds-link__dark ds-text-size__l">
                       <span className="ds-icon outline-package-box ds-icon-size__m"></span>
                       <span className="ds-text ds-text-variant__paragraph ds-text-size__m">Profile</span>
                     </Link>
