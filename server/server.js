@@ -1430,140 +1430,25 @@
         cart: {
             
         },
-        recipes: {
-    		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551279012
-    		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551344360
-    		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551388703
-    		}
-    	},
+      
     	comments: {
+           "e94c92de-0969-4447-b46e-72385ee42154": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+                text: "Salted Caramel is the best caramel ice cream I've ever had." ,
+                _createdOn: 1722199793425,
+                _id: "e94c92de-0969-4447-b46e-72385ee42154"
+            },
+            "e94c92de-0969-4447-b46e-72385ee42894": {
+                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+                productId: "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+                text:"Mint Chocolate Chip is a classic. Love the chunks of chocolate!" ,
+                _createdOn: 1722199793425,
+                _id: "e94c92de-0969-4447-b46e-72385ee42894"
+            }
            
     	},
-    	records: {
-    		i01: {
-    			name: "John1",
-    			val: 1,
-    			_createdOn: 1613551388703
-    		},
-    		i02: {
-    			name: "John2",
-    			val: 1,
-    			_createdOn: 1613551388713
-    		},
-    		i03: {
-    			name: "John3",
-    			val: 2,
-    			_createdOn: 1613551388723
-    		},
-    		i04: {
-    			name: "John4",
-    			val: 2,
-    			_createdOn: 1613551388733
-    		},
-    		i05: {
-    			name: "John5",
-    			val: 2,
-    			_createdOn: 1613551388743
-    		},
-    		i06: {
-    			name: "John6",
-    			val: 3,
-    			_createdOn: 1613551388753
-    		},
-    		i07: {
-    			name: "John7",
-    			val: 3,
-    			_createdOn: 1613551388763
-    		},
-    		i08: {
-    			name: "John8",
-    			val: 2,
-    			_createdOn: 1613551388773
-    		},
-    		i09: {
-    			name: "John9",
-    			val: 3,
-    			_createdOn: 1613551388783
-    		},
-    		i10: {
-    			name: "John10",
-    			val: 1,
-    			_createdOn: 1613551388793
-    		}
-    	},
-    	catches: {
-    		"07f260f4-466c-4607-9a33-f7273b24f1b4": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			angler: "Paulo Admorim",
-    			weight: 636,
-    			species: "Atlantic Blue Marlin",
-    			location: "Vitoria, Brazil",
-    			bait: "trolled pink",
-    			captureTime: 80,
-    			_createdOn: 1614760714812,
-    			_id: "07f260f4-466c-4607-9a33-f7273b24f1b4"
-    		},
-    		"bdabf5e9-23be-40a1-9f14-9117b6702a9d": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			angler: "John Does",
-    			weight: 554,
-    			species: "Atlantic Blue Marlin",
-    			location: "Buenos Aires, Argentina",
-    			bait: "trolled pink",
-    			captureTime: 120,
-    			_createdOn: 1614760782277,
-    			_id: "bdabf5e9-23be-40a1-9f14-9117b6702a9d"
-    		}
-    	},
-    	furniture: {
-    	},
+    
     	orders: {
     	},
     	movies: {
@@ -1594,96 +1479,7 @@
     	},
     	likes: {
     	},
-    	ideas: {
-    		"833e0e57-71dc-42c0-b387-0ce0caf5225e": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "Best Pilates Workout To Do At Home",
-    			description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima possimus eveniet ullam aspernatur corporis tempore quia nesciunt nostrum mollitia consequatur. At ducimus amet aliquid magnam nulla sed totam blanditiis ullam atque facilis corrupti quidem nisi iusto saepe, consectetur culpa possimus quos? Repellendus, dicta pariatur! Delectus, placeat debitis error dignissimos nesciunt magni possimus quo nulla, fuga corporis maxime minus nihil doloremque aliquam quia recusandae harum. Molestias dolorum recusandae commodi velit cum sapiente placeat alias rerum illum repudiandae? Suscipit tempore dolore autem, neque debitis quisquam molestias officia hic nesciunt? Obcaecati optio fugit blanditiis, explicabo odio at dicta asperiores distinctio expedita dolor est aperiam earum! Molestias sequi aliquid molestiae, voluptatum doloremque saepe dignissimos quidem quas harum quo. Eum nemo voluptatem hic corrupti officiis eaque et temporibus error totam numquam sequi nostrum assumenda eius voluptatibus quia sed vel, rerum, excepturi maxime? Pariatur, provident hic? Soluta corrupti aspernatur exercitationem vitae accusantium ut ullam dolor quod!",
-    			img: "./images/best-pilates-youtube-workouts-2__medium_4x3.jpg",
-    			_createdOn: 1615033373504,
-    			_id: "833e0e57-71dc-42c0-b387-0ce0caf5225e"
-    		},
-    		"247efaa7-8a3e-48a7-813f-b5bfdad0f46c": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			title: "4 Eady DIY Idea To Try!",
-    			description: "Similique rem culpa nemo hic recusandae perspiciatis quidem, quia expedita, sapiente est itaque optio enim placeat voluptates sit, fugit dignissimos tenetur temporibus exercitationem in quis magni sunt vel. Corporis officiis ut sapiente exercitationem consectetur debitis suscipit laborum quo enim iusto, labore, quod quam libero aliquid accusantium! Voluptatum quos porro fugit soluta tempore praesentium ratione dolorum impedit sunt dolores quod labore laudantium beatae architecto perspiciatis natus cupiditate, iure quia aliquid, iusto modi esse!",
-    			img: "./images/brightideacropped.jpg",
-    			_createdOn: 1615033452480,
-    			_id: "247efaa7-8a3e-48a7-813f-b5bfdad0f46c"
-    		},
-    		"b8608c22-dd57-4b24-948e-b358f536b958": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			title: "Dinner Recipe",
-    			description: "Consectetur labore et corporis nihil, officiis tempora, hic ex commodi sit aspernatur ad minima? Voluptas nesciunt, blanditiis ex nulla incidunt facere tempora laborum ut aliquid beatae obcaecati quidem reprehenderit consequatur quis iure natus quia totam vel. Amet explicabo quidem repellat unde tempore et totam minima mollitia, adipisci vel autem, enim voluptatem quasi exercitationem dolor cum repudiandae dolores nostrum sit ullam atque dicta, tempora iusto eaque! Rerum debitis voluptate impedit corrupti quibusdam consequatur minima, earum asperiores soluta. A provident reiciendis voluptates et numquam totam eveniet! Dolorum corporis libero dicta laborum illum accusamus ullam?",
-    			img: "./images/dinner.jpg",
-    			_createdOn: 1615033491967,
-    			_id: "b8608c22-dd57-4b24-948e-b358f536b958"
-    		}
-    	},
-    	catalog: {
-    		"53d4dbf5-7f41-47ba-b485-43eccb91cb95": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			make: "Table",
-    			model: "Swedish",
-    			year: 2015,
-    			description: "Medium table",
-    			price: 235,
-    			img: "./images/table.png",
-    			material: "Hardwood",
-    			_createdOn: 1615545143015,
-    			_id: "53d4dbf5-7f41-47ba-b485-43eccb91cb95"
-    		},
-    		"f5929b5c-bca4-4026-8e6e-c09e73908f77": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Sofa",
-    			model: "ES-549-M",
-    			year: 2018,
-    			description: "Three-person sofa, blue",
-    			price: 1200,
-    			img: "./images/sofa.jpg",
-    			material: "Frame - steel, plastic; Upholstery - fabric",
-    			_createdOn: 1615545572296,
-    			_id: "f5929b5c-bca4-4026-8e6e-c09e73908f77"
-    		},
-    		"c7f51805-242b-45ed-ae3e-80b68605141b": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			make: "Chair",
-    			model: "Bright Dining Collection",
-    			year: 2017,
-    			description: "Dining chair",
-    			price: 180,
-    			img: "./images/chair.jpg",
-    			material: "Wood laminate; leather",
-    			_createdOn: 1615546332126,
-    			_id: "c7f51805-242b-45ed-ae3e-80b68605141b"
-    		}
-    	},
-    	teams: {
-    		"34a1cab1-81f1-47e5-aec3-ab6c9810efe1": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Storm Troopers",
-    			logoUrl: "/assets/atat.png",
-    			description: "These ARE the droids we're looking for",
-    			_createdOn: 1615737591748,
-    			_id: "34a1cab1-81f1-47e5-aec3-ab6c9810efe1"
-    		},
-    		"dc888b1a-400f-47f3-9619-07607966feb8": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Team Rocket",
-    			logoUrl: "/assets/rocket.png",
-    			description: "Gotta catch 'em all!",
-    			_createdOn: 1615737655083,
-    			_id: "dc888b1a-400f-47f3-9619-07607966feb8"
-    		},
-    		"733fa9a1-26b6-490d-b299-21f120b2f53a": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Minions",
-    			logoUrl: "/assets/hydrant.png",
-    			description: "Friendly neighbourhood jelly beans, helping evil-doers succeed.",
-    			_createdOn: 1615737688036,
-    			_id: "733fa9a1-26b6-490d-b299-21f120b2f53a"
-    		}
-    	},
+    	
     	members: {
     		"cc9b0a0f-655d-45d7-9857-0a61c6bb2c4d": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
