@@ -18,6 +18,7 @@ export default function Login() {
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(loginSchema),
+    mode: 'onChange', 
   });
 
   const onSubmit = async (data) => {
@@ -73,7 +74,7 @@ export default function Login() {
                       placeholder="Enter your email"
                       required=""
                     />
-                    {errors.email && <p>{errors.email.message}</p>}
+                    {errors.email && <p className="error-message">{errors.email.message}</p>}
                   </div>
                   <div className="input-box">
                     <i className="fas fa-lock" />
@@ -84,7 +85,7 @@ export default function Login() {
                       placeholder="Enter your password"
                       required=""
                     />
-                    {errors.password && <p>{errors.password.message}</p>}
+                   {errors.password && <p className="error-message">{errors.password.message}</p>}
                   </div>
                   <div className="text">
                     <a href="#">Forgot password?</a>

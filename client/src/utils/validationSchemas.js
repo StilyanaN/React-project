@@ -8,8 +8,8 @@ export const loginSchema = yup.object().shape({
 });
 
 export const registerSchema = yup.object({
-    name: yup.string().trim().min(1, 'Name is required.').min(2, 'Name must be at least 2 characters long.'),
+    username: yup.string().trim().min(1, 'Name is required.').min(2, 'Name must be at least 2 characters long.'),
     email: yup.string().trim().min(1, 'Email is required.').email("Invalid email address.").matches(emailRegex, "Invalid email address."),
-    password: yup.string().trim().min(6, 'Password must be at least 6 characters long.'),
-    repassword: yup.string().trim().min(6, 'Password confirmation is required.').oneOf([yup.ref('password'), null],"Passwords don't match.")
+    password: yup.string().trim().min(5, 'Password must be at least 5 characters long.'),
+    repassword: yup.string().trim().min(5, 'Password confirmation is required.').oneOf([yup.ref('password'), null],"Passwords don't match.")
 })

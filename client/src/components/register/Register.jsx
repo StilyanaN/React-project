@@ -1,25 +1,32 @@
-import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
-import "./Register.css";
-import { useContext } from "react";
-import useForm from "../../hooks/useForm";
-import AuthContext from "../../contexts/authContext";
+import './Register.css';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { Slide } from 'react-awesome-reveal';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import 'react-toastify/dist/ReactToastify.css';
 
-const RegisterFormKeys = {
-  Username: "username",
-  Email: "email",
-  Password: "password",
-  RePassword: "re-password",
-};
+import AuthContext from '../../contexts/authContext';
+import { registerSchema } from '../../utils/validationSchemas';
+
 
 export default function Register() {
   const { registerSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-    [RegisterFormKeys.Username]: "",
-    [RegisterFormKeys.Email]: "",
-    [RegisterFormKeys.Password]: "",
-    [RegisterFormKeys.RePassword]: "",
+
+  const { register, handleSubmit, formState: { errors }} = useForm({
+    resolver: yupResolver(registerSchema),
+    mode: 'onChange', 
   });
+
+  const onSubmit = async (data) => {
+    try {
+      await registerSubmitHandler(data);
+      toast.success('Registration successful!');
+    } catch (error) {
+      toast.error('Registration failed. Please try again.');
+    }
+  };
 
   return (
     <>
@@ -37,11 +44,7 @@ export default function Register() {
               </div>
             </div>
             <div className="back">
-              <img
-                className="backImg"
-                src="/img/melting-ice-cream-cone.jpg"
-                alt=""
-              />
+              <img className="backImg" src="/img/melting-ice-cream-cone.jpg" alt="" />
               <div className="text">
                 <span className="text-1">
                   Complete miles of journey <br /> with one step
@@ -52,60 +55,51 @@ export default function Register() {
           </div>
           <div className="forms">
             <div className="form-content">
-              <div className="signup-form">
-                <div className="title">Signup</div>
-                <form id="register" onSubmit={onSubmit}>
+              <div className="login-form">
+                <div className="title">Register</div>
+                <form id="register" onSubmit={handleSubmit(onSubmit)}>
                   <div className="input-boxes">
                     <div className="input-box">
                       <i className="fas fa-user" />
                       <input
                         type="text"
                         placeholder="Enter your name"
-                        required=""
-                        onChange={onChange}
-                        name={RegisterFormKeys.Username}
-                        value={values[RegisterFormKeys.Username]}
+                        {...register('username')}
                       />
+                      {errors.username && <p className="error-message">{errors.username.message}</p>}
                     </div>
                     <div className="input-box">
                       <i className="fas fa-envelope" />
                       <input
                         type="text"
                         placeholder="Enter your email"
-                        required=""
-                        onChange={onChange}
-                        name={RegisterFormKeys.Email}
-                        value={values[RegisterFormKeys.Email]}
+                        {...register('email')}
                       />
+                      {errors.email && <p className="error-message">{errors.email.message}</p>}
                     </div>
                     <div className="input-box">
                       <i className="fas fa-lock" />
                       <input
                         type="password"
                         placeholder="Enter your password"
-                        required=""
-                        onChange={onChange}
-                        name={RegisterFormKeys.Password}
-                        value={values[RegisterFormKeys.Password]}
+                        {...register('password')}
                       />
+                      {errors.password && <p className="error-message">{errors.password.message}</p>}
                     </div>
                     <div className="input-box">
                       <i className="fas fa-lock" />
                       <input
-                        type="password" 
-                        placeholder="Enter your password"
-                        required=""
-                        onChange={onChange}
-                        name={RegisterFormKeys.RePassword}
-                        value={values[RegisterFormKeys.RePassword]}
+                        type="password"
+                        placeholder="Confirm your password"
+                        {...register('repassword')}
                       />
+                      {errors.repassword && <p className="error-message">{errors.repassword.message}</p>}
                     </div>
                     <div className="button input-box">
                       <input type="submit" value="Register" />
                     </div>
                     <div className="text sign-up-text">
-                      Already have an account?{" "}
-                      <Link to={"/login"}>login here</Link>
+                      Already have an account? <Link to="/login">login here</Link>
                     </div>
                   </div>
                 </form>
