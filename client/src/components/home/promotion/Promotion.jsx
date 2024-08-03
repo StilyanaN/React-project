@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import VideoModal from "../video-modal/VideoModal";
 import "./Promotion.css";
 
 export default function Promotion() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   const handleScrollToTop = () => {
     window.scrollTo(0, 0);
+  };
+
+  const handleOpenModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -12,7 +24,7 @@ export default function Promotion() {
         <div className="col-md-62 px-0" style={{ minHeight: 500 }}>
           <div className="position-relative h-100">
             <img
-              className="position-absolute w-100 h-100"
+              className="position-absolute w-100 h-100 "
               src="img/promotion.jpg"
               style={{ objectFit: "cover" }}
             />
@@ -20,8 +32,7 @@ export default function Promotion() {
               type="button"
               className="btn-play"
               data-toggle="modal"
-              data-src="img/video.mp4"
-              data-target="#videoModal"
+              onClick={handleOpenModal}
             >
               <span />
             </button>
@@ -29,7 +40,6 @@ export default function Promotion() {
         </div>
         <div className="col-md-6 py-5 py-md-0 px-0">
           <div className="h-100 d-flex flex-column align-items-center justify-content-center text-center p-5">
-        
             <h3 className="font-weight-bold text-white mt-3 mb-4">
               Discover Our Best Ice Creams
             </h3>
@@ -54,6 +64,11 @@ export default function Promotion() {
             >
               Order Now
             </Link>
+            <VideoModal
+              isVisible={isModalVisible}
+              onClose={handleCloseModal}
+              videoSrc="https://www.youtube.com/watch?v=kWpXIlvZyGY"
+            />
           </div>
         </div>
       </div>

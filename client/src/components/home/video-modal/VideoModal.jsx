@@ -1,40 +1,25 @@
-export default function VideoModal(){
-    
-    return(
-        <div
-  className="modal fade"
-  id="videoModal"
-  tabIndex={-1}
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-body">
-        <button
-          type="button"
-          className="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
-      
-        <div className="embed-responsive embed-responsive-16by9">
-          <iframe
-            className="embed-responsive-item"
-            src=""
-            id="video"
-            // eslint-disable-next-line react/no-unknown-property
-            allowscriptaccess="always"
-            allow="autoplay"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+import PropTypes from "prop-types";
+import ModalVideo from "react-modal-video";
+import "react-modal-video/scss/modal-video.scss";
 
-    )
-}
+const VideoModal = ({ isVisible, onClose, videoSrc }) => {
+  const videoId = videoSrc.split("v=")[1]?.split("&")[0];
+
+  return (
+    <ModalVideo
+      channel="youtube"
+      autoplay
+      isOpen={isVisible}
+      videoId={videoId}
+      onClose={onClose}
+    />
+  );
+};
+
+VideoModal.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  videoSrc: PropTypes.string.isRequired,
+};
+
+export default VideoModal;
