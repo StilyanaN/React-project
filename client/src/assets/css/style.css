@@ -4188,6 +4188,13 @@ input[type="button"].btn-block {
   background-size: 100% 100%;
 }
 
+.fa-ice-cream span{
+  color: #F195B2 ;
+}
+.fa-ice-cream {
+  color: #62C3E7 ;
+}
+
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
   .navbar-expand-sm > .container-fluid, .navbar-expand-sm > .container-sm, .navbar-expand-sm > .container-md, .navbar-expand-sm > .container-lg, .navbar-expand-sm > .container-xl {
@@ -9824,7 +9831,7 @@ h6,
 }
 
 .page-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/header.jpg), no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/header2.jpg), no-repeat center center;
   background-size: cover;
 }
 

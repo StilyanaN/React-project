@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div
       className="container-fluid footer bg-light py-5"
-      style={{ marginTop: 90 }}
+      style={{ marginTop: 10}}
     >
       <div className="container text-center py-5">
         <div className="row">
