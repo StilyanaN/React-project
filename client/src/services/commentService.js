@@ -1,6 +1,7 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/data/comments';
+const envUrl = import.meta.env.VITE_API_URL;
+const baseUrl = `${envUrl}/data/comments`;
 
 export const getAll = async (productId) => {
     const query = new URLSearchParams({
@@ -8,9 +9,7 @@ export const getAll = async (productId) => {
         load: `owner=_ownerId:users`,
     });
 
-    const result = await request.get(`${baseUrl}?${query}`);
-
-    return result;
+    return request.get(`${baseUrl}?${query}`);
 };
 
 export const create = async (productId, text) => {

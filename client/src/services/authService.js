@@ -1,9 +1,10 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/users';
+
+const baseUrl = `${import.meta.env.VITE_API_URL}`;
 
 export const login = async (email, password) => {
-    const result = await request.post(`${baseUrl}/login`, {
+    const result = await request.post(`${baseUrl}/users/login`, {
         email,
         password,
     });
@@ -11,7 +12,8 @@ export const login = async (email, password) => {
     return result;
 };
 
-export const register = (username, email, password) => request.post(`${baseUrl}/register`, {
+
+export const register = (username, email, password) => request.post(`${baseUrl}/users/register`, {
     username,
     email,
     password,

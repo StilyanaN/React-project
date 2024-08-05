@@ -1,7 +1,7 @@
 import * as request from '../lib/request';
 
-const baseUrl = `${import.meta.env.VITE_API_URL}/data/cart`
-
+const envUrl = import.meta.env.VITE_API_URL;
+const baseUrl = `${envUrl}/data/cart`
 
 export const getProductsInCart = async (userId) =>  {
     const result = await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
