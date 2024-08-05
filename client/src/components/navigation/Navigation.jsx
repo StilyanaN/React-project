@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import DropdownProfile from '../user/dropdown-profile/DropdownProfile';
+import DropdownProfile from './DropdownProfile';
 import { useDropdown } from '../../hooks/useDropdown'
 
 export default function Navigation() {
