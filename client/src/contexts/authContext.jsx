@@ -17,13 +17,16 @@ export const AuthProvider = ({
     const isAdmin = Boolean(auth.role === "admin");
 
     const loginSubmitHandler = async (values) => {
-        const result = await authService.login(values.email, values.password);
-
-        setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
-
-        navigate("/");
+        try {
+            const result = await authService.login(values.email, values.password);
+            setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken); 
+            navigate("/");
+        } catch (error) {
+            console.error("Login failed:", error);
+        }
     };
+    
 
     const registerSubmitHandler = async (values) => {
         const result = await authService.register(values.username, values.email, values.password);

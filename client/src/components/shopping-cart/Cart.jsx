@@ -11,11 +11,11 @@ export default function Cart() {
   const [deliveryType, setDeliveryType] = useState("Standard-Delivery");
 
   let totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
   let deliveryFee = deliveryType === "Standard-Delivery" ? 4.99 : 6.99;
   let totalPriceDelivery = totalPrice + deliveryFee;
-
   let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  const isCartEmpty = totalQuantity === 0;
 
   const handleCheckout = () => {
     navigate('/checkout');
@@ -32,9 +32,7 @@ export default function Cart() {
           <div className="title">
             <div className="row">
               <div className="col">
-                <h4>
-                  <b>Shopping Cart</b>
-                </h4>
+                <h4><b>Shopping Cart</b></h4>
               </div>
               <div className="col align-self-center text-right text-muted">
                 {totalQuantity} item{totalQuantity !== 1 ? 's' : ''}
@@ -50,9 +48,7 @@ export default function Cart() {
         </div>
         <div className="col-md-4 summary">
           <div>
-            <h5>
-              <b>Summary</b>
-            </h5>
+            <h5><b>Summary</b></h5>
           </div>
           <hr />
           <div className="row">
@@ -75,7 +71,13 @@ export default function Cart() {
             <div className="col">TOTAL PRICE</div>
             <div className="col text-right">$ {totalPriceDelivery.toFixed(2)}</div>
           </div>
-          <button onClick={handleCheckout} className="btn btn-primary py-md-3 px-md-5 mt-2">CHECKOUT</button>
+          <button 
+            onClick={handleCheckout} 
+            className="btn btn-primary py-md-3 px-md-5 mt-2"
+            disabled={isCartEmpty} 
+          >
+            CHECKOUT
+          </button>
         </div>
       </div>
     </div>
