@@ -1,7 +1,9 @@
-// services/productService.js
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/data/flavors';
+
+const envUrl = import.meta.env.VITE_API_URL;
+const baseUrl = `${envUrl}/data/flavors`
+
 
 export const getAll = async () => {
     return await request.get(baseUrl);
@@ -10,6 +12,14 @@ export const getAll = async () => {
 export const getOne = async (flavorId) => {
   const result= await request.get(`${baseUrl}/${flavorId}`);
   return result;
+};
+
+export const getSorted = async (page = 1, pageSize = 6) => {
+ 
+  const skip = (page - 1) * pageSize;
+  const query = `sortBy=_createdOn desc&$skip=${skip}&$limit=${pageSize}`;
+  
+  return await request.get(`${baseUrl}/?${query}`);
 };
 
 export const create = async (flavorData) => {

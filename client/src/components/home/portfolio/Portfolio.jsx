@@ -8,7 +8,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     setLoading(true);
-    productService.getAll()
+    productService.getSorted()
       .then((items) => {
         setPortfolioItems(items);
         setLoading(false);

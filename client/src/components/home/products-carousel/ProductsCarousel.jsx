@@ -11,7 +11,7 @@ export default function Products() {
 
   useEffect(() => {
     productService
-      .getAll()
+      .getSorted()
       .then((result) => {
         if (result && typeof result === "object") {
           const flavorsArray = Object.values(result);
@@ -57,14 +57,11 @@ export default function Products() {
                 0: {
                   items: 1,
                 },
-                576: {
+                768: {
                   items: 2,
                 },
-                768: {
+                1000: {
                   items: 3,
-                },
-                992: {
-                  items: 4,
                 },
               }}
               navText={[
@@ -93,7 +90,7 @@ export default function Products() {
                       alt={name}
                     />
                   </div>
-                  <h5 className="font-weight-bold mb-4">{name}</h5>
+                  <h5 className="font-weight-bold mb-4" >{name}</h5>
                   <Link
                     to={`/catalog/${_id}`}
                     className="btn btn-sm btn-secondary"
