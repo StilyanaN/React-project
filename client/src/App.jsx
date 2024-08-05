@@ -13,9 +13,7 @@ import Footer from "./components/footer/Footer";
 import ProductDetails from "./components/products/product-details/ProductDetails";
 import About from "./components/home/about/About";
 import Register from "./components/register/Register";
-import SideCatalog from "./components/products/side-catalog/SideCatalog";
 import Logout from "./components/logout/Logout";
-import Loader from "./components/loader/Loader";
 import Cart from "./components/shopping-cart/Cart";
 import Checkout from "./components/shopping-cart/checkout/Checkout";
 import CreteProduct from "./components/admin/create-product/CreateProduct";
@@ -33,10 +31,9 @@ function App() {
           <Topbar />
           <Navigation />
           <Routes>
-            <Route path={"/loader"} element={<Loader />} />
+        
             <Route path={"/"} element={<Home />} />
             <Route path={"/about"} element={<About />} />
-            <Route path={"/side"} element={<SideCatalog />} />
             <Route path={"/login"} element={<Login />} />
             <Route path={"/register"} element={<Register />} />
             <Route path={"/catalog"} element={<Catalog />} />
