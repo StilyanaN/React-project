@@ -35,9 +35,7 @@ export default function Carousel(){
               Made From Our Own Organic Milk
             </h1>
             </Slide>
-            <a href="" className="btn btn-primary py-md-3 px-md-5 mt-2">
-              Learn More
-            </a>
+            <Link to="/about" className="btn btn-primary py-md-3 px-md-5 mt-2">Learn More</Link>
           </div>
         </div>
       </div>

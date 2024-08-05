@@ -9,11 +9,12 @@ export default function Footer() {
       <div className="container text-center py-5">
         <div className="row">
           <div className="col-12 mb-4">
-            <a href="index.html" className="navbar-brand m-0">
-              <h1 className="m-0 mt-n2 display-4 text-primary">
+          <Link to="/" className="navbar-brand m-0">
+          <h1 className="m-0 mt-n2 display-4 text-primary">
                 <span className="text-secondary">ice</span>DREAM
-              </h1>
-            </a>
+              </h1></Link>
+          
+            
           </div>
           <div className="col-12 mb-4">
             <Link
