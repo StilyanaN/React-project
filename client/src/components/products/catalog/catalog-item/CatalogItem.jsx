@@ -8,6 +8,11 @@ export default function CatalogItem({
   price,
   imageUrl,
 }) {
+
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+};
+
   return (
     <div className="col-md-6 col-lg-6 col-xl-4">
       <div className="rounded position-relative fruite-item">
@@ -33,9 +38,9 @@ export default function CatalogItem({
             <p className="text-dark fs-5 fw-bold mb-0">
               ${price} / 100g
             </p>
-            <Link to={`/catalog/${_id}`} className="btn border border-secondary rounded-pill px-3 text-primary">
+            <Link to={`/catalog/${_id}`} className="btn border border-secondary rounded-pill px-3 text-primary" onClick={handleScrollToTop}>
               <i className="far fa-eye me-2 text-primary" />
-              See details
+              <span className="span-text">See details</span>
               </Link>
           </div>
         </div>

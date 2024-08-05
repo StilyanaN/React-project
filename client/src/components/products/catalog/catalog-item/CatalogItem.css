@@ -75,6 +75,9 @@
     border-bottom: 2px solid var(--bs-secondary) !important;
 }
 
+.span-text{
+  margin-left: 7px;
+}
 .text-dark.fs-5.fw-bold.mb-0{
  padding-bottom: 15px;
 }

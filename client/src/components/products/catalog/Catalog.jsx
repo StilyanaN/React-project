@@ -15,10 +15,14 @@ export default function Catalog() {
 
   useEffect(() => {
     executeWithLoading(async () => {
-      const result = await productService.getAll();
-      setFlavors(result);
+      try {
+        const result = await productService.getSorted(currentPage, itemsPerPage);
+        setFlavors(result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
     });
-  }, [executeWithLoading]);
+  }, [executeWithLoading, currentPage]);
 
   const pageChangeHandler = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -27,7 +31,7 @@ export default function Catalog() {
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentFlavors = flavors.slice(startIndex, startIndex + itemsPerPage);
-  const totalPages = Math.ceil(flavors.length / itemsPerPage);
+  const totalPages = Math.ceil(flavors.length / itemsPerPage); 
 
   if (loading) {
     return <Loader />;
@@ -36,7 +40,7 @@ export default function Catalog() {
   return (
     <>
       <div className="container-fluid page-header py-5"></div>
-      <div className="container-fluid fruite py-5">
+      <div className="container-fluid fruite py-56">
         <div className="container py-5">
           <div className="row g-4">
             <div className="col-lg-12">
