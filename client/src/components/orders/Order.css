@@ -1,0 +1,77 @@
+
+.order-history {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.order-h {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+ 
+  .order-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+  }
+  
+  .order-id {
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .order-date {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  .order-total {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+ 
+  .order-details {
+    margin-top: 15px;
+  }
+  
+  .items {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .items img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .items div {
+    font-size: 14px;
+    color: #333;
+  }
+  
+ 
+  .no-found {
+    text-align: center;
+    color: #777;
+  }
+  
+ 
