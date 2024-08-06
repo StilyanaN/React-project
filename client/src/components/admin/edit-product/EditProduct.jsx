@@ -11,7 +11,6 @@ export default function EditProduct() {
         name: '',
         price: '',
         calories: '',
-        rating: '',
         imageUrl: '',
     });
 
@@ -86,20 +85,6 @@ export default function EditProduct() {
                                     value={flavor.calories}
                                     onChange={onChange}
                                     placeholder="Enter calories"
-                                    required
-                                />
-                            </div>
-                            <div className="input-box">
-                                <i className="fas fa-star"></i>
-                                <input
-                                    type="number"
-                                    id="rating"
-                                    name="rating"
-                                    value={flavor.rating}
-                                    onChange={onChange}
-                                    placeholder="Enter product rating"
-                                    step="0.1"
-                                    max="5"
                                     required
                                 />
                             </div>

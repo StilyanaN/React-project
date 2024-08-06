@@ -56,18 +56,7 @@ export default function CreateProduct() {
                                     required
                                 />
                             </div>
-                            <div className="input-box">
-                                <i className="fas fa-star"></i>
-                                <input
-                                    type="number"
-                                    id="rating"
-                                    name="rating"
-                                    placeholder="Enter product rating"
-                                    step="0.1"
-                                    max="5"
-                                    required
-                                />
-                            </div>
+ 
                             <div className="input-box">
                                 <i className="fas fa-image"></i>
                                 <input
