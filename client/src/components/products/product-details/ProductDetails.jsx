@@ -3,6 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState, useReducer, useCallback } from "react";
 import useForm from "../../../hooks/useForm";
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import AuthContext from "../../../contexts/authContext";
 import { CartContext } from "../../../contexts/cartContext";
@@ -80,15 +83,30 @@ export default function ProductDetails() {
   };
 
   const onDeleteClick = useCallback(async (productId) => {
-    const confirmed = window.confirm("Are you sure you want to delete this product?");
-    if (confirmed) {
-      try {
-        await productService.remove(productId);
-        navigate("/catalog");
-      } catch (error) {
-        alert("Error deleting product: " + error.message);
-      }
-    }
+    confirmAlert({
+      title: 'Confirm Deletion',
+      message: 'Are you sure you want to delete this product?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: async () => {
+            try {
+              await productService.remove(productId);
+              navigate("/catalog");
+              toast.success('Product deleted successfully!');
+            } catch (error) {
+              toast.error('Error deleting product: ' + error.message);
+            }
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {
+            toast.info('Product deletion cancelled.');
+          }
+        }
+      ]
+    });
   }, [navigate]);
 
   return (
