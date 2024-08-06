@@ -36,7 +36,7 @@ const OrderHistory = () => {
             <li key={order._id} className="order-item">
               <div className="order-id">№ {order._id}</div>
               <div className="order-date">{new Date(order._createdOn).toLocaleString()}</div>
-              <div className="order-total">Total:{order.totalPrice.toFixed(2)}</div> 
+              <div className="order-total">Total: ${order.totalPrice.toFixed(2)}</div> 
               <div className="order-details">
                 {Array.isArray(order.items) && order.items.map((item, index) => ( 
                   <div key={index} className="items">

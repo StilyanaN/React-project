@@ -135,26 +135,28 @@ export default function ProductDetails() {
                     Calories: <span>{product.calories}</span> kcal per 100g
                   </p>
 
-                  <div className="input-group quantity mb-5" style={{ width: 100 }}>
-                    <div className="input-group-btn">
-                      <button
-                        onClick={decrementClickHandler}
-                        className="btn btn-sm btn-minus rounded-circle bg-light border"
-                      >
-                        <i className="fa fa-minus" />
-                      </button>
-                    </div>
+                  {!isAdmin && (
+                    <div className="input-group quantity mb-5" style={{ width: 100 }}>
+                      <div className="input-group-btn">
+                        <button
+                          onClick={decrementClickHandler}
+                          className="btn btn-sm btn-minus rounded-circle bg-light border"
+                        >
+                          <i className="fa fa-minus" />
+                        </button>
+                      </div>
 
-                    <p className="counter-p">{count}</p>
-                    <div className="input-group-btn">
-                      <button
-                        onClick={incrementClickHandler}
-                        className="btn btn-sm btn-plus rounded-circle bg-light border"
-                      >
-                        <i className="fa fa-plus" />
-                      </button>
+                      <p className="counter-p">{count}</p>
+                      <div className="input-group-btn">
+                        <button
+                          onClick={incrementClickHandler}
+                          className="btn btn-sm btn-plus rounded-circle bg-light border"
+                        >
+                          <i className="fa fa-plus" />
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {!isAdmin && isAuthenticated && (
                     <button
@@ -221,7 +223,7 @@ export default function ProductDetails() {
                     </div>
                   </div>
                 )}
-                {isAuthenticated && !isAdmin &&(
+                {isAuthenticated && !isAdmin && (
                   <form className="form" onSubmit={onSubmit}>
                     <h5 className="mb-5 fw-bold">Leave a review</h5>
                     <div className="row g-4">
