@@ -1,10 +1,9 @@
 import * as request from '../lib/request';
 
-const envUrl = import.meta.env.VITE_API_URL;
-const baseUrl = `${envUrl}/data/cart`
+const baseUrl = import.meta.env.VITE_API_URL;
 
 export const getProductsInCart = async (userId) =>  {
-    const result = await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22`);
+    const result = await request.get(`${baseUrl}/data/cart/?where=_ownerId%3D%22${userId}%22`);
     return Object.values(result);
 };
 
@@ -22,10 +21,10 @@ export const addProductInCart = async (cartData, userId) => {
                 ...existingItem,
                 quantity: existingItem.quantity + cartData.quantity
             };
-            result = await request.put(`${baseUrl}/${existingItem._id}`, updatedData);
+            result = await request.put(`${baseUrl}/data/cart/${existingItem._id}`, updatedData);
         } else {
 
-            result = await request.post(baseUrl, cartData);
+            result = await request.post(`${baseUrl}/data/cart`, cartData);
         }
 
         return result;
@@ -36,10 +35,10 @@ export const addProductInCart = async (cartData, userId) => {
 };
 
 
-export const removeCartItem = (cartItemId) => request.remove(`${baseUrl}/${cartItemId}`);
+export const removeCartItem = (cartItemId) => request.remove(`${baseUrl}/data/cart/${cartItemId}`);
 
 export const editCartItem = async (cartItemId, quantity) => {
-    const result = await request.put(`${baseUrl}/${cartItemId}`, {quantity});
+    const result = await request.put(`${baseUrl}/data/cart/${cartItemId}`, {quantity});
 
     return result;
 }
