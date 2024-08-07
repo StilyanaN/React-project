@@ -2,7 +2,7 @@
 
 **Ice Dream** is your go-to online shop for indulging in a variety of delicious ice cream flavors. Whether you’re looking to buy, review, or manage products, Ice Dream offers a delightful experience for both customers and admins.
 
-## 🌐 Visit the Site here
+## 🌐 Visit the Site Here
 
 [Ice Dream](https://ice-dream-7621c.web.app/)
 
@@ -11,7 +11,6 @@
 - **React**: A JavaScript library for building user interfaces.
 - **Vite**: A build tool and development server that provides fast and optimized builds.
 - **Firebase**: A cloud-based platform providing backend services, including authentication and real-time database.
-
 - **SoftUni Practice Server**: Used for backend practice and API services.
 
 ## 🚀 Features
@@ -58,6 +57,20 @@ The service is initialized with three users for immediate testing:
   - **Password:** admin
 
 ## 📦 Installation and Running the Application
+
+### Clone the Repository
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/StilyanaN/React-project.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd React-project
+    ```
 
 ### Client Setup
 
