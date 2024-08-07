@@ -6,6 +6,13 @@
 
 [Ice Dream](https://ice-dream-7621c.web.app/)
 
+## 🛠 Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool and development server that provides fast and optimized builds.
+- **Firebase**: A cloud-based platform providing backend services, including authentication and real-time database.
+
+- **SoftUni Practice Server**: Used for backend practice and API services.
 
 ## 🚀 Features
 
@@ -17,7 +24,7 @@
 
 ### 🍨 Product Catalog
 
-- **Dynamic Home Page:** View a dynamic showcase of featured ice creams .
+- **Dynamic Home Page:** View a dynamic showcase of featured ice creams.
 - **Catalog Page:** Browse through a catalog of all available ice cream products.
 - **Product Details:** Get detailed information about each ice cream.
 
@@ -67,17 +74,17 @@ The service is initialized with three users for immediate testing:
     ```
 
 3. Create environment files:
-- **Create `.env.development`** in the `client` directory with the following content:
+    - **Create `.env.development`** in the `client` directory with the following content:
 
-    ```plaintext
-    VITE_API_URL=http://localhost:3030
-    ```
+        ```plaintext
+        VITE_API_URL=http://localhost:3030
+        ```
 
-- **Create `.env.production`** in the `client` directory with the following content:
+    - **Create `.env.production`** in the `client` directory with the following content:
 
-    ```plaintext
-    VITE_API_URL=https://api.example.com
-    ```
+        ```plaintext
+        VITE_API_URL=https://api.example.com
+        ```
 
     - **Replace** `https://api.example.com` with your actual production API URL.
 
@@ -117,6 +124,8 @@ Here’s a breakdown of the project structure:
 
 - **/server:** Backend application built with Node.js and Express.
   - **/src:** Contains server logic, including controllers and business logic.
-  
 
+## 🎥 Credits
 
+- **Design Inspiration and HTML Layout:** [HTML Codex](https://www.htmlcodex.com)
+- **Video Tutorial:** [@emotionreal](https://www.youtube.com/@emotionreal)
