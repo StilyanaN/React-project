@@ -20,6 +20,7 @@ import EditProduct from "./components/admin/edit-product/EditProduct";
 import AuthGuard from "./components/guards/AuthGuard";
 import AdminGuard from "./components/guards/AdminGuard"
 import OrderHistory from "./components/orders/Order";
+import NotFound from "./components/not-found/NotFound";
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
             <Route path={"/checkout"} element={<Checkout />} />
             <Route path={"/profile/orders"} element={<OrderHistory />} />
             <Route path={"/logout"} element={<Logout />} />
-
+            <Route path="/*" element={<NotFound />} />
             </Route>
             <Route element={<AdminGuard/>}> 
             <Route path={"/create"} element={<CreteProduct />} />
