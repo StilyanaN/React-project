@@ -166,12 +166,12 @@ export default function ProductDetails() {
                   </div>
                 )}
               </div>
-              {isAuthenticated && (
-                <div className="col-lg-12">
-                  <CommentsSection 
-                    comments={comments} 
-                    onDeleteComment={onDeleteComment} 
-                  />
+              <div className="col-lg-12">
+                <CommentsSection 
+                  comments={comments} 
+                  onDeleteComment={onDeleteComment} 
+                />
+                {isAuthenticated && (
                   <CommentForm 
                     onSubmit={onSubmit} 
                     values={values} 
@@ -179,8 +179,8 @@ export default function ProductDetails() {
                     handleRatingChange={handleRatingChange} 
                     rating={rating}
                   />
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>
           <div className="col-lg-4 col-xl-3">
