@@ -1,16 +1,12 @@
 /* eslint-disable react/prop-types */
 import { createContext } from "react";
 import { useNavigate } from 'react-router-dom';
-
 import * as authService from '../services/authService';
 import usePersistedState from "../hooks/usePersistedState";
 
-
 const AuthContext = createContext();
 
-export const AuthProvider = ({
-    children,
-}) => {
+export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
 
@@ -22,17 +18,17 @@ export const AuthProvider = ({
             setAuth(result);
             localStorage.setItem('accessToken', result.accessToken); 
             navigate("/");
+            return { success: true }; 
         } catch (error) {
             console.error("Login failed:", error);
+            return { success: false, message: error.response?.data?.message || 'Login failed. Please check your credentials and try again.' };
         }
     };
-    
 
     const registerSubmitHandler = async (values) => {
         const result = await authService.register(values.username, values.email, values.password);
 
         setAuth(result);
-
         localStorage.setItem('accessToken', result.accessToken);
 
         navigate("/");
@@ -60,6 +56,5 @@ export const AuthProvider = ({
         </AuthContext.Provider>
     );
 };
-
 
 export default AuthContext;
