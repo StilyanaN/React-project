@@ -1,21 +1,26 @@
-import "./ProductDetails.css";
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState, useReducer, useCallback } from "react";
+import { useContext, useEffect, useReducer, useCallback, useState } from "react";
 import useForm from "../../../hooks/useForm";
-import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert'; 
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import { Link } from "react-router-dom";
 
 import AuthContext from "../../../contexts/authContext";
 import { CartContext } from "../../../contexts/cartContext";
 
 import * as commentService from "../../../services/commentService";
 import * as productService from "../../../services/productService";
-import { addProductInCart } from "../../../services/cartService";
 
 import commentReducer from "../../../reducers/commentReducer";
 import SideCatalog from "../side-catalog/SideCatalog";
+import ProductImage from "./ProductImage";
+import ProductInfo from "./ProductInfo";
+import QuantitySelector from "./QuantitySelector";
+import AddToCartButton from "./AddToCartButton";
+import AdminControls from "./AdminControls";
+import CommentsSection from "./CommentsSection";
+import CommentForm from "./CommentForm";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
@@ -32,26 +37,46 @@ export default function ProductDetails() {
   });
 
   useEffect(() => {
-    productService.getOne(flavorId).then(setProduct);
+    let isMounted = true; 
 
-    commentService.getAll(flavorId).then((result) => {
-      dispatch({
-        type: "GET_ALL_COMMENTS",
-        payload: result,
-      });
-    });
+    const fetchProductData = async () => {
+      try {
+        const productData = await productService.getOne(flavorId);
+        if (isMounted) setProduct(productData); 
+
+        const commentsData = await commentService.getAll(flavorId);
+        if (isMounted) {
+          dispatch({
+            type: "GET_ALL_COMMENTS",
+            payload: commentsData,
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchProductData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [flavorId]);
 
   async function addCommentHandler(values) {
-    const newComment = await commentService.create(flavorId, values.comment, rating);
-    newComment.owner = { username };
+    try {
+      const newComment = await commentService.create(flavorId, values.comment, rating);
+      newComment.owner = { username };
 
-    dispatch({
-      type: "ADD_COMMENT",
-      payload: newComment,
-    });
+      dispatch({
+        type: "ADD_COMMENT",
+        payload: newComment,
+      });
 
-    resetForm();
+      resetForm();
+    } catch (error) {
+      toast.error('Error adding comment: ' + error.message);
+    }
   }
 
   function resetForm() {
@@ -59,27 +84,21 @@ export default function ProductDetails() {
     setRating(0);
   }
 
-  const incrementClickHandler = () => {
-    setCount(count + 1);
-  };
-
-  const decrementClickHandler = () => {
-    setCount(Math.max(count - 1, 1));
-  };
-
-  const handleAddToCart = () => {
-    onCartSubmit({
-      addProductInCart,
-      flavorId: product._id,
-      imageUrl: product.imageUrl,
-      name: product.name,
-      price: product.price,
-      quantity: count,
-    });
-  };
-
   const handleRatingChange = (newRating) => {
     setRating(newRating);
+  };
+
+  const onDeleteComment = async (commentId) => {
+    try {
+      await commentService.remove(commentId);
+      dispatch({
+        type: "DELETE_COMMENT",
+        payload: commentId,
+      });
+      toast.success('Comment deleted successfully!');
+    } catch (error) {
+      toast.error('Error deleting comment: ' + error.message);
+    }
   };
 
   const onDeleteClick = useCallback(async (productId) => {
@@ -110,174 +129,65 @@ export default function ProductDetails() {
   }, [navigate]);
 
   return (
-    <>
-      <div className="container-fluid py-5 mt-5">
-        <div className="container py-5">
-          <div className="row g-4 mb-5">
-            <div className="col-lg-8 col-xl-9">
-              <div className="row g-4">
-                <div className="col-lg-6">
-                  <div className="border rounded">
-                    <a href="#">
-                      <img
-                        src={product.imageUrl}
-                        className="img-fluid rounded"
-                        alt="image"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <h4 className="fw-bold mb-3">{product.name}</h4>
-                  <h5 className="fw-bold mb-3">{product.price} $</h5>
-                 
-                  <p className="mb-4">
-                    Calories: <span>{product.calories}</span> kcal per 100g
-                  </p>
-
-                  {!isAdmin && (
-                    <div className="input-group quantity mb-5" style={{ width: 100 }}>
-                      <div className="input-group-btn">
-                        <button
-                          onClick={decrementClickHandler}
-                          className="btn btn-sm btn-minus rounded-circle bg-light border"
-                        >
-                          <i className="fa fa-minus" />
-                        </button>
-                      </div>
-
-                      <p className="counter-p">{count}</p>
-                      <div className="input-group-btn">
-                        <button
-                          onClick={incrementClickHandler}
-                          className="btn btn-sm btn-plus rounded-circle bg-light border"
-                        >
-                          <i className="fa fa-plus" />
-                        </button>
-                      </div>
-                    </div>
-                  )}
-
-                  {!isAdmin && isAuthenticated && (
-                    <button
-                      onClick={handleAddToCart}
-                      className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"
-                    >
-                      <i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart
-                    </button>
-                  )}
-
-                  {isAdmin && (
-                    <div className="admin-buttons">
-                      <Link to={`/catalog/${flavorId}/edit`} className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">Edit</Link>
-                      <button onClick={() => onDeleteClick(product._id)} className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">Delete</button>
-                    </div>
-                  )}
-                  {!isAdmin && !isAuthenticated && (
-                    <div className="admin-buttons">
-                      <Link to={`/login`} className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">Sign In to Start Your Order!</Link>
-                    </div>
-                  )}
-                </div>
-                {isAuthenticated && (
-                  <div className="col-lg-12">
-                    <nav>
-                      <div className="nav nav-tabs mb-3">
-                        <button
-                          className="nav-link active border-white border-bottom-0"
-                          type="button"
-                          role="tab"
-                          id="nav-about-tab"
-                          data-bs-toggle="tab"
-                          data-bs-target="#nav-about"
-                          aria-controls="nav-about"
-                          aria-selected="true"
-                        >
-                          Reviews
-                        </button>
-                      </div>
-                    </nav>
-                    <div className="tab-content mb-5">
-                      <div
-                        className="tab-pane active"
-                        id="nav-about"
-                        role="tabpanel"
-                        aria-labelledby="nav-about-tab"
-                      >
-                        <ul>
-                          {comments.map(({ _id, text, owner: { username }, rating }) => (
-                            <li key={_id} className="comment">
-                              <p>
-                                {username}: {text}
-                                <br />
-                                {rating && (
-                                  <span>
-                                    Rating: {rating} <i className="fa fa-star text-warning" />
-                                  </span>
-                                )}
-                              </p>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+    <div className="container-fluid py-5 mt-5">
+      <div className="container py-5">
+        <div className="row g-4 mb-5">
+          <div className="col-lg-8 col-xl-9">
+            <div className="row g-4">
+              <div className="col-lg-6">
+                <ProductImage imageUrl={product.imageUrl} />
+              </div>
+              <div className="col-lg-6">
+                <ProductInfo product={product} />
+                
+                {!isAdmin && (
+                  <QuantitySelector count={count} setCount={setCount} />
                 )}
-                {isAuthenticated && !isAdmin && (
-                  <form className="form" onSubmit={onSubmit}>
-                    <h5 className="mb-5 fw-bold">Leave a review</h5>
-                    <div className="row g-4">
-                      <div className="col-lg-12">
-                        <div className="border-bottom rounded my-4">
-                          <textarea
-                            name="comment"
-                            value={values.comment}
-                            onChange={onChange}
-                            className="form-control border-0"
-                            cols={30}
-                            rows={8}
-                            placeholder="Your Review *"
-                            spellCheck="false"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-lg-12">
-                        <div className="d-flex justify-content-between py-3 mb-5">
-                          <div className="d-flex align-items-center">
-                            <p className="mb-0 me-3">Please rate:</p>
-                            <div
-                              className="d-flex align-items-center"
-                              style={{ fontSize: 12 }}
-                            >
-                              {[...Array(5)].map((_, i) => (
-                                <i
-                                  key={i}
-                                  className={`fa fa-star ${i < rating ? "text-warning" : "text-muted"}`}
-                                  onClick={() => handleRatingChange(i + 1)}
-                                  style={{ cursor: "pointer" }}
-                                />
-                              ))}
-                            </div>
-                          </div>
-                          <button
-                            type="submit"
-                            className="btn border border-secondary text-primary rounded-pill px-4 py-3"
-                          >
-                            Post Comment
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
+
+                {!isAdmin && isAuthenticated && (
+                  <AddToCartButton 
+                    product={product} 
+                    count={count} 
+                    onCartSubmit={onCartSubmit} 
+                  />
+                )}
+
+                {isAdmin && (
+                  <AdminControls 
+                    productId={product._id} 
+                    onDeleteClick={onDeleteClick} 
+                    flavorId={flavorId}
+                  />
+                )}
+
+                {!isAdmin && !isAuthenticated && (
+                  <div className="admin-buttons">
+                    <Link to={`/login`} className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary">Sign In to Start Your Order!</Link>
+                  </div>
                 )}
               </div>
+              {isAuthenticated && (
+                <div className="col-lg-12">
+                  <CommentsSection 
+                    comments={comments} 
+                    onDeleteComment={onDeleteComment} 
+                  />
+                  <CommentForm 
+                    onSubmit={onSubmit} 
+                    values={values} 
+                    onChange={onChange} 
+                    handleRatingChange={handleRatingChange} 
+                    rating={rating}
+                  />
+                </div>
+              )}
             </div>
-            <div className="col-lg-4 col-xl-3">
-              <SideCatalog />
-            </div>
+          </div>
+          <div className="col-lg-4 col-xl-3">
+            <SideCatalog />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
