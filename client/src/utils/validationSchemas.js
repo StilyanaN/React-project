@@ -13,3 +13,10 @@ export const registerSchema = yup.object({
     password: yup.string().trim().min(5, 'Password must be at least 5 characters long.'),
     repassword: yup.string().trim().min(5, 'Password confirmation is required.').oneOf([yup.ref('password'), null],"Passwords don't match.")
 })
+
+export const productSchema = yup.object().shape({
+  name: yup.string().trim().required('Product name is required.'),
+  price: yup.number().typeError('Price must be a number.').positive('Price must be a positive number.').required('Price is required.'),
+  calories: yup.number().typeError('Calories must be a number.').positive('Calories must be a positive number.').required('Calories are required.'),
+  imageUrl: yup.string().trim().url('Invalid image URL.').required('Image URL is required.'),
+});
