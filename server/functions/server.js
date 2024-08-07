@@ -1342,101 +1342,109 @@
     };
     var seedData = {
         flavors:{
-            
-        "7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b": {
-            name: "Vanilla Bean",
-            price: 2.39,
-            calories: 250,
-            rating: 4.8,
-            imageUrl: "https://img.freepik.com/premium-photo/vanilla-ice-cream-vanilla-beans-vanilla-flowers-table_641010-39733.jpg",
-            _id:"7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b",
-            _createdOn: 1689072000000
         
-        },
-        "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d": {
-            name: "Salted Caramel",
-            price: 2.99,
-            calories: 300,
-            rating: 4.9,
-            imageUrl: "https://img.freepik.com/premium-photo/salted-caramel-ice-cream-cookie-tasty-dessert-background_962764-88293.jpg",
-            _id:"5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
-            _createdOn: 1722508027
-           
-        },
-        "2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d": {
-            name: "Strawberry Bliss",
-            price: 2.49,
-            calories: 220,
-            rating: 4.7,
-            imageUrl: "https://img.freepik.com/premium-photo/bowl-strawberry-ice-cream-with-fresh-berries-pink-background_756535-2163.jpg",
-            _id:"2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d",
-            _createdOn: 1719829627
-           
-        },
-        "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d": {
-            name: "Mint Chocolate Chip",
-            price: 2.29,
-            calories: 270,
-            rating: 4.6,
-            imageUrl: "https://img.freepik.com/premium-photo/product-photography-mint-chocolate-chip-ice-cream-bowl_613258-552.jpg",
-            _id:"4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9",
-            _createdOn: 1722522427
-           
-        },
-        "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d": {
-            name: "Pistachio Delight",
-            price: 2.99,
-            calories: 310,
-            rating: 4.9,
-            imageUrl: "https://img.freepik.com/free-photo/pistachio-ice-cream_658428-300.jpg",
-            _id:"6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
-            _createdOn: 1722522667
+            "7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b": {
+                name: "Vanilla Bean",
+                price: 2.39,
+                calories: 250,
+                rating: 4.8,
+                imageUrl: "https://img.freepik.com/premium-photo/vanilla-ice-cream-vanilla-beans-vanilla-flowers-table_641010-39733.jpg",
+                _id:"7a4b5c6d-8e9f-4a2b-9c3d-df4b5e6f7a8b",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn: 1689072000000
             
-        },
-        "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d": {
-            name:"Mango Tango",
-            price: 2.99,
-            calories: 240,
-            rating: 4.8,
-            imageUrl: "https://img.freepik.com/free-photo/composition-delicious-homemade-icecream_23-2148900953.jpg",
-            _id:"3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-            _createdOn:1722591067
-        
-        },
-        "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d": {
-            name: "Coconut Bliss",
-            price: 2.49,
-            calories: 290,
-            rating: 4.7,
-            imageUrl: "https://img.freepik.com/premium-photo/coconut-ice-cream-coconut-shell_871881-1191.jpg",
-            _id:"8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
-            _createdOn:1722695467
-           
-        },
-        "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d": {
-            name: "Peach Sorbet",
-            price: 2.79,
-            calories: 180,
-            rating: 4.6,
-            imageUrl: "https://img.freepik.com/premium-photo/refreshing-peach-sorbet-creation_893571-35624.jpg",
-            _id:"0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
-            _createdOn:1717493467
-           
-        },
-        "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d": {
-            name: "Raspberry Ripple",
-            price: 2.49,
-            calories: 260,
-            rating: 4.8,
-            imageUrl:"https://img.freepik.com/premium-photo/raspberry-ice-cream-with-fresh-raspberries-bowl_140916-2749.jpg",
-            _id:"1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            _createdOn:1720085467
+            },
+            "5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d": {
+                name: "Salted Caramel",
+                price: 2.99,
+                calories: 300,
+                rating: 4.9,
+                imageUrl: "https://img.freepik.com/premium-photo/salted-caramel-ice-cream-cookie-tasty-dessert-background_962764-88293.jpg",
+                _id:"5a6b7c8d-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn: 1722508027
+               
+            },
+            "2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d": {
+                name: "Strawberry Bliss",
+                price: 2.49,
+                calories: 220,
+                rating: 4.7,
+                imageUrl: "https://img.freepik.com/premium-photo/bowl-strawberry-ice-cream-with-fresh-berries-pink-background_756535-2163.jpg",
+                _id:"2a3b4c5d-6e7f-8a9b-1c2d-3e4f5a6b7c8d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn: 1719829627
+               
+            },
+            "4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9d": {
+                name: "Mint Chocolate Chip",
+                price: 2.29,
+                calories: 270,
+                rating: 4.6,
+                imageUrl: "https://img.freepik.com/premium-photo/product-photography-mint-chocolate-chip-ice-cream-bowl_613258-552.jpg",
+                _id:"4a5b6c7d-8e9f-0a1b-2c3d-4e5f6a7b8c9",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn: 1722522427
+               
+            },
+            "6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d": {
+                name: "Pistachio Delight",
+                price: 2.99,
+                calories: 310,
+                rating: 4.9,
+                imageUrl: "https://img.freepik.com/free-photo/pistachio-ice-cream_658428-300.jpg",
+                _id:"6a7b8c9d-0e1f-2a3b-4c5d-6e7f8a9b0c1d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn: 1722522667
+                
+            },
+            "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d": {
+                name:"Mango Tango",
+                price: 2.99,
+                calories: 240,
+                rating: 4.8,
+                imageUrl: "https://img.freepik.com/free-photo/composition-delicious-homemade-icecream_23-2148900953.jpg",
+                _id:"3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn:1722591067
             
-        }
-    
-
-        },
+            },
+            "8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d": {
+                name: "Coconut Bliss",
+                price: 2.49,
+                calories: 290,
+                rating: 4.7,
+                imageUrl: "https://img.freepik.com/premium-photo/coconut-ice-cream-coconut-shell_871881-1191.jpg",
+                _id:"8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn:1722695467
+               
+            },
+            "0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d": {
+                name: "Peach Sorbet",
+                price: 2.79,
+                calories: 180,
+                rating: 4.6,
+                imageUrl: "https://img.freepik.com/premium-photo/refreshing-peach-sorbet-creation_893571-35624.jpg",
+                _id:"0a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn:1717493467
+               
+            },
+            "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d": {
+                name: "Raspberry Ripple",
+                price: 2.49,
+                calories: 260,
+                rating: 4.8,
+                imageUrl:"https://img.freepik.com/premium-photo/raspberry-ice-cream-with-fresh-raspberries-bowl_140916-2749.jpg",
+                _id:"1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                _createdOn:1720085467
+                
+            }
         
+        
+            },
         cart: {
             
         },
